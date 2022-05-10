@@ -1,0 +1,14 @@
+{
+  "name": "event-system-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sidnei-junior/event-system-api.git",
+  "author": "sidneiarauj <sidnei.ifrn@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "dependencies": {
+    "jest": "^28.1.0"
+  }
+}
