@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+    event_system:
+        image: postgres
+        container_name: event_system_db
+        restart: always
+        ports:
+            - 5432:5432
+        environment:
+          - POSTGRES_USER=eventsystem
+          - POSTGRES_PASSWORD=event123
+          - POSTGRES_DB=event_system
+        volumes:
+          - pgdata:/data/postgres
+    app:
+        build: .
+        container_name: event_system
+        ports:
+            - 3000:3000
+        volumes:
+            - .:/usr/app
+        links:
+            - event_system
+        depends_on:
+            - event_system
+
+volumes:
+    pgdata:
+        driver: local
