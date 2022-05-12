@@ -1,23 +1,36 @@
 {
-  "name": "event-system-api",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/sidnei-junior/event-system-api.git",
-  "author": "sidneiarauj <sidnei.ifrn@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "start": "nodemon --legacy-watch index.js",
+   "name": "event-system-api",
+   "version": "1.0.0",
+   "main": "index.js",
+   "repository": "https://github.com/sidnei-junior/event-system-api.git",
+   "author": "sidneiarauj <sidnei.ifrn@gmail.com>",
+   "license": "MIT",
+   "scripts": {
+    "start": "ts-node-dev -r tsconfig-paths/register --inspect --poll --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
     "test": "jest --watch"
-  },
-  "dependencies": {
-    "@types/jsonwebtoken": "^8.5.8",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "jest": "^28.1.0",
-    "jsonwebtoken": "^8.5.1",
-    "typescript": "^4.6.4"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.16"
-  }
+   },
+   "dependencies": {
+      "@types/jsonwebtoken": "^8.5.8",
+      "dotenv": "^16.0.1",
+      "express": "^4.18.1",
+      "jest": "^28.1.0",
+      "jsonwebtoken": "^8.5.1",
+      "pg": "^8.4.0",
+      "postgres": "^3.1.0",
+      "reflect-metadata": "^0.1.13",
+      "typeorm": "0.3.6",
+      "typescript": "^4.6.4",
+      "uuid": "^8.3.2"
+   },
+   "devDependencies": {
+      "@types/express": "^4.17.13",
+      "@types/node": "^16.11.10",
+      "@types/uuid": "^8.3.4",
+      "nodemon": "^2.0.16",
+      "ts-node": "10.7.0",
+      "ts-node-dev": "^1.1.8",
+      "tsconfig-paths": "^4.0.0",
+      "typescript": "4.5.2"
+   }
 }
