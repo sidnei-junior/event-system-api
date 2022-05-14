@@ -1,10 +1,10 @@
 import { DataSource } from "typeorm";
 import { Event, Ticket, User } from "../modules/entities";
 
-const AppDataSource = new DataSource({
+export default new DataSource({
     type: "postgres",
     port: 5432,
-    host: "event_system_db",
+    host: "localhost",
     username: "eventsystem",
     password: "event123",
     database: "event_system",
@@ -14,7 +14,3 @@ const AppDataSource = new DataSource({
     migrations: ["./src/database/migrations/*.ts"],
     subscribers: [],
 }); 
-
-const connection = AppDataSource.initialize()
-
-export default AppDataSource
