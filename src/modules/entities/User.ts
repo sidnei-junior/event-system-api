@@ -1,5 +1,7 @@
-import { Entity, CreateDateColumn, PrimaryColumn, Column } from "typeorm";
+import { Entity, CreateDateColumn, PrimaryColumn, Column, OneToMany } from "typeorm";
 import { v4 as uuidV4 } from 'uuid';
+import { Event } from "./Event";
+import { Ticket } from "./Ticket";
 
 @Entity('users')
 class User {
@@ -18,6 +20,12 @@ class User {
 
     @Column()
     is_admin: boolean;
+
+    @OneToMany(() => Event, (event) => event.user)
+    events: Event[]
+
+    @OneToMany(() => Ticket, (ticket) => ticket.user)
+    tickets: Ticket[]
 
     @CreateDateColumn()
     created_at: Date;
