@@ -1,5 +1,6 @@
-import { Entity, CreateDateColumn, PrimaryColumn, Column, UpdateDateColumn, ManyToOne } from "typeorm";
+import { Entity, CreateDateColumn, PrimaryColumn, Column, UpdateDateColumn, ManyToOne, OneToMany } from "typeorm";
 import { v4 as uuidV4 } from 'uuid';
+import { Ticket } from "./Ticket";
 import { User } from "./User";
 
 @Entity('events')
@@ -22,6 +23,9 @@ class Event {
 
     @ManyToOne(() => User, (user) => user.events)
     user: User;
+
+    @OneToMany(() => Ticket, (ticket) => ticket.event)
+    tickets: Ticket[]
 
     constructor() {
         this.id = uuidV4();
