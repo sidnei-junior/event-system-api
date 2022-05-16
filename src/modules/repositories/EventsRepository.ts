@@ -25,6 +25,11 @@ class EventsRepository implements IEventRepository {
 
     await this.repository.save(event);
   }
+
+  async list(): Promise<Event[]> {
+    const events = await this.repository.find();
+    return events;
+  }
 }
 
 export { EventsRepository };
