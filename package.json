@@ -6,7 +6,7 @@
    "author": "sidneiarauj <sidnei.ifrn@gmail.com>",
    "license": "MIT",
    "scripts": {
-      "start": "ts-node-dev -r --inspect --poll --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+      "start": "ts-node-dev --inspect --poll --transpile-only --ignore-watch node_modules --respawn src/server.ts",
       "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
       "test": "jest --watch"
    },
